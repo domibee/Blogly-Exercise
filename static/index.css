@@ -1,0 +1,12 @@
+section {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profile-img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 200px;
+} 
+
