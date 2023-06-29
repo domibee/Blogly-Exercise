@@ -64,10 +64,12 @@ class UserTestCase(TestCase):
 
     def test_delete_user(self):
         with app.test_client() as client:
-            resp = self.client.delete(f"/delete/{test_user.id}")
-            html = resp.get_data(as_text=True)
+            resp = self.client.delete(f"/delete/{user.id}")
 
-            self.asserEqual
+            self.asserEqual(resp.status_code, 302)
+
+            deleted_user = User.query.get(self.user.id)
+            self.assertIsNone(deleted_user)
 
     # def test_edit_user(self):
     #     with app.test_client() as client:
